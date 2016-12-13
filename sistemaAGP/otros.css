@@ -1,0 +1,487 @@
+﻿.panel
+    {
+        background-color: #f1f1f1; 
+    }
+
+.cerrar 
+    {
+	    background: #4d8ffc;
+	    filter: alpha(opacity=90);
+	    opacity: 0.90;
+    }
+.cerrar:hover, .cerrar:focus 
+    {
+	    background: #4988f1;
+	    color: #fff;
+	    border-color: #427dde;
+    }
+
+
+.modal 
+    {
+	    border-radius: 10px;
+	    -ms-border-radius: 10px;
+	    -moz-border-radius: 10px;
+	    -webkit-border-radius: 10px;
+	    -khtml-border-radius: 10px;
+	    background-color: #fff;
+	    border: 1px solid  #d2d6de;
+	    height: 260px;
+	    width: 520px;
+    }
+.modal-texto 
+    {
+	    position: absolute;
+	    height: 158px;
+	    width: 520px;
+	    top: 72%;
+	    left: 50%;
+	    margin-top: -130px;
+	    margin-left: -260px;
+	    color:  #2672ec;
+    	right: 738px;
+	}
+.modal-texto table 
+    {
+	    height: 100%;
+	    width: 99%;
+   		margin-left: 0px;
+	}
+.modal-texto td 
+    {
+	    padding: 3px 6px 3px 6px;
+	    margin: 5px;
+	    vertical-align: middle;
+	    text-align: center;
+	    font-size:x-small;
+    }
+    
+.div_control
+    {
+        position:relative;
+        background-color:#585858;
+        color:#fff;
+        padding:2px;   
+        border-radius: 5px;
+        -ms-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -khtml-border-radius: 5px;
+        -moz-box-shadow: 10px 10px 5px #888;
+        -webkit-box-shadow: 10px 10px 5px #888;
+        box-shadow: 10px 10px 5px #888;
+        top: 12px;
+        left: -1px;
+        margin-bottom: 0px;
+     width: 752px;
+    }
+.div_control select 
+    { 
+        font-size:x-small;
+        color:#fff;
+        -webkit-appearance: none;        /*Removes default chrome and safari style*/
+        -moz-appearance: none;          /* Removes Default Firefox style*/
+        background: url('../imagenes/sistema/static/dropdown-arrow.png') no-repeat 185px 5px;          
+        text-indent: 0.01px;
+        text-overflow: ""; 
+        cursor: pointer;
+        margin-left: 16px;
+        border-left-style: none !important;
+        border-left-color: inherit !important;
+        border-left-width: 0 !important;
+        border-right-style: none !important;
+        border-right-color: inherit !important;
+        border-right-width: 0 !important;
+        border-top-style: none !important;
+        border-top-color: inherit !important;
+        border-top-width: 0 !important;
+        border-bottom-style: none !important;
+        border-bottom-color: inherit !important;
+        border-bottom-width: 0 !important;
+    }
+.div_control select option 
+    {
+        font-size:x-small;
+        text-align: center;
+        color:#000; 
+          
+    }
+    
+.div_sp
+    {
+        position:relative;
+        background-color:#585858;
+        color:#fff;
+        padding:2px;   
+        border-radius: 5px;
+        -ms-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -khtml-border-radius: 5px;
+        -moz-box-shadow: 10px 10px 5px #888;
+        -webkit-box-shadow: 10px 10px 5px #888;
+        box-shadow: 10px 10px 5px #888;
+        top: 2px;
+        left: 0px;
+        margin-bottom: 0px;
+     width: 1226px;
+    }
+.div_sp select 
+    { 
+        font-size:x-small;
+        color:#fff;
+        -webkit-appearance: none;        /*Removes default chrome and safari style*/
+        -moz-appearance: none;          /* Removes Default Firefox style*/
+        background: url('../imagenes/sistema/static/dropdown-arrow.png') no-repeat 185px 5px;          
+        text-indent: 0.01px;
+        text-overflow: ""; 
+        cursor: pointer;
+        margin-left: 16px;
+        border-left-style: none !important;
+        border-left-color: inherit !important;
+        border-left-width: 0 !important;
+        border-right-style: none !important;
+        border-right-color: inherit !important;
+        border-right-width: 0 !important;
+        border-top-style: none !important;
+        border-top-color: inherit !important;
+        border-top-width: 0 !important;
+        border-bottom-style: none !important;
+        border-bottom-color: inherit !important;
+        border-bottom-width: 0 !important;
+    }
+.div_sp select option 
+    {
+        font-size:x-small;
+        text-align: center;
+        color:#000; 
+          
+    }
+
+.table_control
+    {
+	    border-collapse:collapse;
+        width: 783px;
+        height: 66px;
+    }
+    
+.table_control th 
+    {
+        position: relative;  	
+	    padding: 5px; /* 0px 5px 0px; */
+	    background: 2672ec;
+	    border:1px solid #f1f1f1;
+	    color: #fff;
+	    vertical-align: middle;
+	    text-align: center;
+	    font-weight: bold;
+	    font-size:x-small;
+    }
+    
+.table_control td 
+    {       
+	    background: #f1f1f1;
+	    color: #2672ec;
+	    border:1px solid #f1f1f1;
+	    text-align:left;
+	    font-family: Arial, Helvetica, sans-serif; 
+	    font-size:xx-small;
+	    vertical-align: middle;	
+	    padding: 5px;
+        margin-left: 80px;
+    }
+
+.table_control select 
+    {
+        font-size:x-small;
+        color:#2672ec;
+        border: 1 px #fff;        /*Removes border*/
+        -webkit-appearance: none;        /*Removes default chrome and safari style*/
+        -moz-appearance: none;          /* Removes Default Firefox style*/
+        background: url('../imagenes/sistema/static/dropdown-arrow-off.png') no-repeat,#ffffff;           /*Adds background-image*/
+        background-position: right;                /*Position of the background-image*/
+        width:200px;
+        height: 20px;/*fix for mac input height*/
+        text-indent: 0.01px; /* Removes default arrow from firefox*/
+        text-overflow: "";  /*Removes default arrow from firefox*/
+        cursor: pointer;
+          /*My custom style for fonts*/    
+    }   
+    
+.table_control select:hover
+	{
+    	font-size:x-small;
+        color:#2672ec;
+        border: 1 px #fff;        /*Removes border*/
+        -webkit-appearance: none;        /*Removes default chrome and safari style*/
+        -moz-appearance: none;          /* Removes Default Firefox style*/
+        background: url('../imagenes/sistema/static/dropdown-arrow-on.png') no-repeat,#ffffff;           /*Adds background-image*/
+        background-position: right;                /*Position of the background-image*/
+        width:200px;
+        height: 20px;/*fix for mac input height*/
+        text-indent: 0.01px; /* Removes default arrow from firefox*/
+        text-overflow: "";  /*Removes default arrow from firefox*/
+        cursor: pointer;    
+	}
+    
+.table_control select option 
+    {
+      text-align: center;
+      color:#000;
+    }
+    
+    .table_n 
+    {
+	    border-collapse:collapse;
+    	width: 584px;
+    	height: 52px;
+	}
+    
+.table_control th 
+    {
+        position: relative;  	
+	    padding: 5px; /* 0px 5px 0px; */
+	    background: 2672ec;
+	    border:1px solid #f1f1f1;
+	    color: #fff;
+	    vertical-align: middle;
+	    text-align: center;
+	    font-weight: bold;
+	    font-size:x-small;
+    }
+    
+.table_control td 
+    {       
+	    background: #f1f1f1;
+	    color: #2672ec;
+	    border:1px solid #f1f1f1;
+	    text-align:left;
+	    font-family: Arial, Helvetica, sans-serif; 
+	    font-size:xx-small;
+	    vertical-align: middle;	
+	    padding: 5px;
+        margin-left: 80px;
+    }
+
+.table_control select 
+    {
+        font-size:x-small;
+        color:#2672ec;
+        border: 1 px #fff;        /*Removes border*/
+        -webkit-appearance: none;        /*Removes default chrome and safari style*/
+        -moz-appearance: none;          /* Removes Default Firefox style*/
+        background: url('../imagenes/sistema/static/dropdown-arrow-off.png') no-repeat,#ffffff;           /*Adds background-image*/
+        background-position: right;                /*Position of the background-image*/
+        width:200px;
+        height: 20px;/*fix for mac input height*/
+        text-indent: 0.01px; /* Removes default arrow from firefox*/
+        text-overflow: "";  /*Removes default arrow from firefox*/
+        cursor: pointer;
+          /*My custom style for fonts*/    
+    }   
+    
+.table_control select:hover
+{
+    font-size:x-small;
+        color:#2672ec;
+        border: 1 px #fff;        /*Removes border*/
+        -webkit-appearance: none;        /*Removes default chrome and safari style*/
+        -moz-appearance: none;          /* Removes Default Firefox style*/
+        background: url('../imagenes/sistema/static/dropdown-arrow-on.png') no-repeat,#ffffff;           /*Adds background-image*/
+        background-position: right;                /*Position of the background-image*/
+        width:200px;
+        height: 20px;/*fix for mac input height*/
+        text-indent: 0.01px; /* Removes default arrow from firefox*/
+        text-overflow: "";  /*Removes default arrow from firefox*/
+        cursor: pointer;    
+}
+    
+.table_control select option 
+    {
+      text-align: center;
+      color:#000;
+    }
+
+.table_control
+    {
+	    border-collapse:collapse;
+        width: 783px;
+        height: 66px;
+    }
+    
+.table_control th 
+    {
+        position: relative;  	
+	    padding: 5px; /* 0px 5px 0px; */
+	    background: 2672ec;
+	    border:1px solid #f1f1f1;
+	    color: #fff;
+	    vertical-align: middle;
+	    text-align: center;
+	    font-weight: bold;
+	    font-size:x-small;
+    }
+    
+.table_control td 
+    {       
+	    background: #f1f1f1;
+	    color: #2672ec;
+	    border:1px solid #f1f1f1;
+	    text-align:left;
+	    font-family: Arial, Helvetica, sans-serif; 
+	    font-size:xx-small;
+	    vertical-align: middle;	
+	    padding: 5px;
+        margin-left: 80px;
+    }
+
+.table_control select 
+    {
+        font-size:x-small;
+        color:#2672ec;
+        border: 1 px #fff;        /*Removes border*/
+        -webkit-appearance: none;        /*Removes default chrome and safari style*/
+        -moz-appearance: none;          /* Removes Default Firefox style*/
+        background: url('../imagenes/sistema/static/dropdown-arrow-off.png') no-repeat,#ffffff;           /*Adds background-image*/
+        background-position: right;                /*Position of the background-image*/
+        width:200px;
+        height: 20px;/*fix for mac input height*/
+        text-indent: 0.01px; /* Removes default arrow from firefox*/
+        text-overflow: "";  /*Removes default arrow from firefox*/
+        cursor: pointer;
+          /*My custom style for fonts*/    
+    }   
+    
+.table_control select:hover
+	{
+    	font-size:x-small;
+        color:#2672ec;
+        border: 1 px #fff;        /*Removes border*/
+        -webkit-appearance: none;        /*Removes default chrome and safari style*/
+        -moz-appearance: none;          /* Removes Default Firefox style*/
+        background: url('../imagenes/sistema/static/dropdown-arrow-on.png') no-repeat,#ffffff;           /*Adds background-image*/
+        background-position: right;                /*Position of the background-image*/
+        width:200px;
+        height: 20px;/*fix for mac input height*/
+        text-indent: 0.01px; /* Removes default arrow from firefox*/
+        text-overflow: "";  /*Removes default arrow from firefox*/
+        cursor: pointer;    
+	}
+    
+.table_control select option 
+    {
+      text-align: center;
+      color:#000;
+    }
+    
+    
+    
+    .table_select
+    {
+	    border-collapse:collapse;
+    	width: 249px;
+    	height: 42px;
+    	background-color: #fff;
+        border:1px solid #f1f1f1;
+	}
+    
+.table_select th 
+    {
+        position: relative;  	
+	    padding: 5px; /* 0px 5px 0px; */
+	    background: 2672ec;
+	    color: #fff;
+	    vertical-align: middle;
+	    text-align: center;
+	    font-weight: bold;
+	    font-size:x-small;
+    }
+    
+.table_select td 
+    {       
+	    color: #2672ec;
+	    text-align:left;
+	    font-family: Arial, Helvetica, sans-serif; 
+	    font-size:xx-small;
+	    vertical-align: middle;	
+	    padding: 2px;
+        margin-left: 80px;
+    }
+    
+ #table_dropdown
+    {
+	    border-collapse:collapse;
+    	width: 246px;
+    	height: 16px;
+	}
+    
+#table_dropdown th 
+    {
+        position: absolute;  	
+	    padding: 5px; /* 0px 5px 0px; */
+	    background: 2672ec;
+	    color: #fff;
+	    vertical-align: middle;
+	    text-align: center;
+	    font-weight: bold;
+	    font-size:small;
+    }
+    
+#table_dropdown td 
+    {
+        position:absolute;
+        width: 246px;
+    	height: 16px;       
+	    background: #fff;
+	    color: #2672ec;
+	    text-align:left;
+	    border:1px solid #acacac;
+	    font-family: Arial, Helvetica, sans-serif; 
+	    font-size:xx-small;
+	    vertical-align: middle;	
+	    padding: 2px;
+        margin-left: 80px;
+    }
+    
+.div_multi
+    {
+	    background: #fff;
+	    position:inherit;
+	    color: #2672ec;
+	    text-align:left;
+	    border:1px solid #acacac;
+	    font-family: Arial, Helvetica, sans-serif; 
+	    font-size:xx-small;
+	    vertical-align: middle;	
+	    padding: 1px;
+        width: 240px;
+    }
+
+.div1
+{
+    background-color: #f1f1f1;
+    border:1px solid #acacac;
+    width: 251px;
+    height:260px;
+    overflow:auto;
+	color: #2672ec;
+	text-align:left;
+	font-family: Arial, Helvetica, sans--small;
+	position:absolute;
+	display:none;
+	float:left;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+}         
+
+.div2
+{
+    background-color: #f1f1f1;
+    border:1px solid #acacac;
+    width: 248px;
+    height: 20px;
+}
+
+

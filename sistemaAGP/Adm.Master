@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Adm.master.cs" Inherits="sistemaAGP.Adm" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+	<base target="_self" />
+	<title></title>
+	
+	<link rel="stylesheet" href="/estilos/sitioHipo.css" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<script type="text/javascript">
+		function solonumeros(e) {
+			var key;
+			if (window.event) // IE
+				key = e.keyCode;
+			else if (e.which) // Netscape/Firefox/Opera
+				key = e.which;
+
+			if (key < 48 || key > 57)
+				return false;
+
+			return true;
+		}
+
+		function up(obj) {
+			var str = obj.value;
+			obj.value = str.toString().toUpperCase();
+		}
+	</script>
+	<style type="text/css">
+		.calendario { background-color: #ffffff; }
+		/*.modalBackground { background-color: Gray; filter: alpha(opacity=50); opacity: 0.50; }*/
+		.updateProgress { border: none; background-color: #ffffff; position: absolute; width: 180px; height: 65px; top: 50%; left: 50%; margin-left: -90px; margin-top: -35px; }		
+		.tabla-titulo { font-family: Arial, Helvetica, sans-serif; font-size: x-small; font-weight: bold; background-color: #669999; color: #ffffff; width: 100%; }
+		.tabla-normal { width: auto; background-color: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: x-small; }
+		.tabla-normal td { vertical-align: middle; }
+		.control { font-family: Arial, Helvetica, sans-serif; font-size: x-small; }
+		.error { font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bold; color: #ff0000; }
+		.acc-cabecera { font-family: Arial, Helvetica, sans-serif; font-size: x-small; font-weight: bold; background-color: #669999; color: #ffffff; padding: 2px; }
+		.acc-contenido { font-family: Arial, Helvetica, sans-serif; font-size: x-small; padding: 5px; }		
+		a { font-family: Arial, Helvetica, sans-serif; font-size: x-small; text-decoration: none; }
+		a:link, a:visited { color: #0099ff; }
+		a:hover, a:active { color: #ffcc00; }		
+		.opciones { margin-bottom: 4px; width: 100%; }
+		.dv { text-align: center; }
+		.modalBackground { background-color: #ffffff; filter: alpha(opacity=40); opacity: 0.4; }
+		.modalBackground2 { background-color: #cccccc; filter: alpha(opacity=40); opacity: 0.4; }
+		.PopUp { background-color: #c0c4cc; border-width: 1px; border-color: #606060; border-style: solid; padding: 20px; }
+		
+		.modalPopup { background-color: #ffffff; border-width: 1px; border-style: solid; border-color: Gray; padding: 3px; }
+		.modalPopup p { padding: 5px; }		
+		.window
+		{
+			padding: 7px;
+			border: 1px solid rgba(255,255,255,0.6);
+			background: rgba(178,215,255,0.75);
+			border-radius: 8px;
+			-webkit-border-radius: 8px;
+			-moz-border-radius: 8px;
+			box-shadow: 0 2px 16px #000, 0 0 1px #000, 0 0 1px #000;
+			-o-box-shadow: 0 2px 16px #000, 0 0 1px #000, 0 0 1px #000;
+			-webkit-box-shadow: 0 2px 16px #000, 0 0 1px #000, 0 0 1px #000;
+			-moz-box-shadow: 0 2px 16px #000, 0 0 1px #000, 0 0 1px #000;
+			text-shadow: 0 0 15px #fff, 0 0 15px #fff;
+		}
+		.window .title 
+		{
+			margin-bottom: 5px;
+		}
+		.window .close
+		{
+			float: right;
+			margin-top: -5px;
+		}
+		.window .content 
+		{
+			background: #fff;
+			border: 1px solid #000;
+			border-radius: 2px;
+			-webkit-border-radius: 2px;
+			-moz-border-radius: 2px;
+			padding: 10px;
+			box-shadow: 0 0 5px #fff, 0 0 1px #fff, inset 0 1px 2px #aaa;
+			-o-box-shadow: 0 0 5px #fff, 0 0 1px #fff, inset 0 1px 2px #aaa;
+			-webkit-box-shadow: 0 0 5px #fff, 0 0 1px #fff, inset 0 1px 2px #aaa;
+			-moz-box-shadow: 0 0 5px #fff, 0 0 1px #fff, inset 0 1px 2px #aaa;
+			text-shadow: none;
+		}
+	</style>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+	<asp:UpdateProgress ID="UpdateProg1" DisplayAfter="0" runat="server">
+		<ProgressTemplate>
+			<div style="position: fixed; width: 100%; height: 100%; background-color: #ffffff;">
+				<div class="updateProgress">
+					<div style="position: relative; text-align: center;">
+						<img src="../imagenes/sistema/gif/loading.gif" style="vertical-align: middle" alt="Procesando" />
+						Procesando ...
+					</div>
+				</div>
+			</div>
+		</ProgressTemplate>
+	</asp:UpdateProgress>
+	<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+		<ContentTemplate>
+			<asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true">
+			</asp:ToolkitScriptManager>
+			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+			</asp:ContentPlaceHolder>
+		</ContentTemplate>
+	</asp:UpdatePanel>
+	</form>
+</body>
+</html>

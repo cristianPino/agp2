@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://serinfo.cl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://serinfo.cl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://serinfo.cl/">
+      <s:element name="Integra_Agp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idEmpresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Numero_Documento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Integra_AgpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Integra_AgpResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Mae_Adquiriente">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="Mae_CompraPara">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="Mae_DatosVehiculos">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="Mae_Facturas">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="Mae_TramitesVehiculos">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaTermino" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoRetorno" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Integra_AgpSoapIn">
+    <wsdl:part name="parameters" element="tns:Integra_Agp" />
+  </wsdl:message>
+  <wsdl:message name="Integra_AgpSoapOut">
+    <wsdl:part name="parameters" element="tns:Integra_AgpResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WService_agp_autoproSoap">
+    <wsdl:operation name="Integra_Agp">
+      <wsdl:input message="tns:Integra_AgpSoapIn" />
+      <wsdl:output message="tns:Integra_AgpSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WService_agp_autoproSoap" type="tns:WService_agp_autoproSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Integra_Agp">
+      <soap:operation soapAction="http://serinfo.cl/Integra_Agp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WService_agp_autoproSoap12" type="tns:WService_agp_autoproSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Integra_Agp">
+      <soap12:operation soapAction="http://serinfo.cl/Integra_Agp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WService_agp_autopro">
+    <wsdl:port name="WService_agp_autoproSoap" binding="tns:WService_agp_autoproSoap">
+      <soap:address location="http://64.76.153.114/wService_Agp_Autopro/WService_agp_autopro.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WService_agp_autoproSoap12" binding="tns:WService_agp_autoproSoap12">
+      <soap12:address location="http://64.76.153.114/wService_Agp_Autopro/WService_agp_autopro.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

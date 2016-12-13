@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Minvestgroup.com" elementFormDefault="qualified" targetNamespace="http://Minvestgroup.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Gildemeister.WCF.BE.NotaPedido" />
+  <xs:element name="RegistraNotaPedido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nro_ordenVenta" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nro_vin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nu_rut_solicitante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistraNotaPedidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Gildemeister.WCF.BE.NotaPedido" minOccurs="0" name="RegistraNotaPedidoResult" nillable="true" type="q1:NotaPedidoBE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizaEstadoNotaPedido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nro_vin" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizaEstadoNotaPedidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizaEstadoNotaPedidoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,359 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AGP.master.cs" Inherits="sistemaAGP.AGP" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>AGP S.A. ASESORIAS DE GESTION Y PROCESOS</title>
+    <link rel="stylesheet" href="/estilos/sitioHipo.css" />
+    <script type="text/javascript">
+        function solonumeros(e) {
+
+            var key;
+
+            if (window.event) {
+                key = e.keyCode;
+            }
+            else if (e.which) {
+                key = e.which;
+            }
+
+            if (key === 8 | key === 127 | key === 27 | key === 26)
+            { return true }
+
+            if (key < 48 || key > 57) {
+                return false;
+            }
+
+            return true;
+        }
+
+        function valida_rut(tRut, tDv) {
+            var rut = document.getElementById(tRut).value;
+            document.getElementById(tDv).value = dv(rut);
+        }
+
+        function dv(t) {
+            var m = 0, s = 1; for (; t; t = Math.floor(t / 10))
+                s = (s + t % 10 * (9 - m++ % 6)) % 11; return s ? s - 1 : 'k';
+        }
+
+        function checkDate(sender) {
+            if (sender._selectedDate > new Date()) {
+                alert("No se puede seleccionar una fecha posterior al día de hoy");
+                sender._selectedDate = new Date();
+                sender._textbox.setValue(sender._selectedDate.format(sender._format));
+            }
+        }
+    </script>
+    <style type="text/css">
+        .fondo_menu {
+            background-color: #323232;
+           /* background-image: url(../imagenes/fondo.png);*/
+            width: 217px;
+              -moz-box-shadow: 5px 5px 2.5px #888;
+        -webkit-box-shadow: 5px 5px 2.5px #888;
+            -ms-box-shadow: 5px 5px 2.5px #888;
+            box-shadow: 5px 5px 2.5px #888;
+        }
+
+        .style3
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: small;
+            font-weight: bold;
+            color: #6d6d6d;
+        }
+        .divCabeceraMenuBoton {
+    float: right;
+    padding-top: 15px;  
+}
+.divCabeceraLogo {
+    width: 50%;
+    padding: 5px;
+    float: left;
+}
+        
+        .style4
+        {
+            height: 67px;
+        }
+        .divCabecera
+        {
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: #f1f1f1;
+            color: #6d6d6d;
+            overflow: hidden;
+            
+        }
+        .divCabeceraMenu {
+
+    padding: 30px;
+    float: right;
+    
+}
+        
+        .CajaDialogo
+        {
+            background-color: #0099FF;
+            border-width: 4px;
+            border-style: outset;
+            border-color: Silver;
+            padding: 0;
+            width: 600px;
+            font-weight: bold;
+            font-style: inherit;
+        }
+        .CajaDialogo div
+        {
+            margin: 5px;
+            text-align: center;
+        }
+        
+        .FondoAplicacion {
+            background-color: Gray;
+            -webkit-filter: alpha(opacity=70);
+            -moz-filter: alpha(opacity=70);
+            -o-filter: alpha(opacity=70);
+            filter: alpha(opacity=70);
+            -ms-opacity: 0.7;
+            opacity: 0.7;
+        }
+
+        .calendario
+        {
+            background-color: #dddddd;
+            color: #000000;
+        }
+        
+        .modalBackground {
+            background-color: Gray;
+            -webkit-filter: alpha(opacity=50);
+            -moz-filter: alpha(opacity=50);
+            -o-filter: alpha(opacity=50);
+            filter: alpha(opacity=50);
+            -ms-opacity: 0.50;
+            opacity: 0.50;
+        }
+
+        .updateProgressContainer {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            top: 0;
+            left: 0;
+            -webkit-filter: alpha(opacity=90);
+            -moz-filter: alpha(opacity=90);
+            -o-filter: alpha(opacity=90);
+            filter: alpha(opacity=90);
+            -ms-opacity: 0.90;
+            opacity: 0.90;
+        }
+
+        .updateProgress
+        {
+            border: none;
+            position: absolute;
+            width: 180px;
+            height: 70px;
+            top: 50%;
+            left: 50%;
+            margin-left: -90px;
+            margin-top: -35px;
+        }
+        
+        .popupContainer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            -webkit-filter: alpha(opacity=90);
+            -moz-filter: alpha(opacity=90);
+            -o-filter: alpha(opacity=90);
+            filter: alpha(opacity=90);
+            -ms-opacity: 0.90;
+            opacity: 0.90;
+            top: 0;
+            left: 0;
+        }
+
+        .popupMsg {
+            -ms-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            border-radius: 5px;
+            border: 1px solid #507cd1;
+            padding: 3px 6px 3px 6px;
+            background: #507cd1;
+            position: absolute;
+            width: 250px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            margin-left: -150px;
+            margin-top: -50px;
+        }
+
+        .popupInfo
+        {
+            position: absolute;
+            width: 200px;
+            height: 80px;
+            top: 50%;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: -40px;
+            background: #ffffff;
+        }
+        
+        .hyperlink
+        {
+            color: #00cc00;
+            text-decoration: none;
+        }
+        .hyperlink:visited
+        {
+            color: #00cc00;
+        }
+        .hyperlink:hover
+        {
+            color: #cc0000;
+        }
+        .hyperlink:active
+        {
+            color: #00cc00;
+        }
+        .errorSummary
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: small;
+            font-weight: normal;
+            color: #ff0000;
+        }
+        /* Para el cierre de sesión */
+        .logout {
+            -ms-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -khtml-border-radius: 10px;
+            border-radius: 10px;
+            background-color: #6d6d6d;
+            color: #f1f1f1;
+            border: 2px solid #f1f1f1;
+            height: 120px;
+            width: 300px;
+        }
+
+        .logout-texto {
+	position: absolute;
+	height: 100px;
+	width: 280px;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -140px;
+	color:  #f1f1f1;
+}
+.logout-texto table {
+	height: 100%;
+	width: 100%;
+}
+.logout-texto td {
+	padding: 3px 6px 3px 6px;
+	margin: 5px;
+	vertical-align: middle;
+	text-align: center;
+}
+    </style>
+    <asp:ContentPlaceHolder ID="ContenidoMenu" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="true"
+        EnableScriptLocalization="true">
+    </ajaxToolkit:ToolkitScriptManager>
+    <asp:UpdateProgress ID="UpdateProg1" DisplayAfter="0" runat="server">
+        <ProgressTemplate>
+            <div class="updateProgressContainer">
+                <div class="updateProgress">
+                    <div style="position: relative; text-align: center;">
+                        <img src="../imagenes/sistema/gif/loading.gif" style="vertical-align: middle" alt="Procesando" />
+                        Procesando ...
+                    </div>
+                </div>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <div>
+    </div>
+    
+     <div class="divCabecera" >
+            <div class="divCabeceraLogo">
+              <asp:Image ID="img_cliente" runat="server" Height="93px" Width="200px" /></div>
+            <div class="divCabeceraMenu">
+                <asp:LinkButton ID="lnkCerrar" runat="server" Text="Salir" 
+                                                            CausesValidation="false" Font-Size="x-small" 
+                                                            ToolTip="Salir"></asp:LinkButton></div>
+            <div class="divCabeceraMenu">
+                <asp:Label ID="lbl_datos" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="X-Small"></asp:Label>
+                    </div>
+                
+                </div>
+
+    	<asp:Panel ID="pnlCerrar" runat="server" CssClass="logout">
+		<div class="logout-texto">
+			<table>
+				<tr>
+					<td colspan="2" class="style2">
+				<img src="../imagenes/sistema/static/urgente.png" alt="Urgente"/>	¿Está seguro de salir?
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<asp:Button ID="btnOK" runat="server" Text="Aceptar" OnClick="btnOK_Click" Width="80px" CausesValidation="false" CssClass="button" />
+					</td>
+					<td>
+						<asp:Button ID="btnCancel" runat="server" Text="Cancelar" Width="80px" CssClass="button_rojo" />
+					</td>
+				</tr>
+			</table>
+		          
+         </div>   
+           
+  </asp:Panel>  
+  <ajaxToolkit:modalpopupextender ID="mpeCerrar" runat="server" CancelControlID="btnCancel" PopupControlID="pnlCerrar" TargetControlID="lnkCerrar" BackgroundCssClass="overlay">
+	</ajaxToolkit:modalpopupextender>
+	<ajaxToolkit:confirmbuttonextender ID="cbeCerrar" runat="server"  DisplayModalPopupID="mpeCerrar" TargetControlID="lnkCerrar">
+	</ajaxToolkit:confirmbuttonextender>
+    
+    
+    <table style="height: 420px; width: 1235px; border: 0; align-content: flex-start" >
+        <tr>
+            <td class="fondo_menu" style=" vertical-align: top" >
+               <asp:TreeView ID="tr_menu" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="XX-Small"
+                    ForeColor="#f1f1f1">
+                    <Nodes>
+                        <asp:TreeNode Text="Nuevo nodo" Value="Nuevo nodo"></asp:TreeNode>
+                        <asp:TreeNode Text="Nuevo nodo" Value="Nuevo nodo"></asp:TreeNode>
+                        <asp:TreeNode Text="Nuevo nodo" Value="Nuevo nodo"></asp:TreeNode>
+                        <asp:TreeNode Text="Nuevo nodo" Value="Nuevo nodo"></asp:TreeNode>
+                    </Nodes>
+                </asp:TreeView>
+            </td>
+            <td style=" vertical-align: top">
+                <asp:ContentPlaceHolder ID="ContenidoCentral" runat="server">
+                  
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+   
+    </form>
+</body>
+</html>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<controlError>
+  
+  <error e404 = "La URL que ha introducido en su navegador es incorrecta. Por favor, vuelva a introducir la dirección URL e inténtelo de nuevo." />
+  
+  
+</controlError>

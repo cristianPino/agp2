@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8504FFC2-AED9-46E6-A92F-81CDFCCF4AF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CACCESO</RootNamespace>
+    <AssemblyName>CACCESO</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcreedorDAC.cs" />
+    <Compile Include="ActividadOrdenTrabajoDAC.cs" />
+    <Compile Include="AgendaDAC.cs" />
+    <Compile Include="AlertaestadoClienteDAC.cs" />
+    <Compile Include="AlertaestadofamiliaDAC.cs" />
+    <Compile Include="Analisis_AlzaDAC.cs" />
+    <Compile Include="AutorizacionAlzamientoDAC.cs" />
+    <Compile Include="BancoClienteDAC.cs" />
+    <Compile Include="BancofinancieraDAC.cs" />
+    <Compile Include="BaseDAC.cs" />
+    <Compile Include="BienesNumeroClienteDAC.cs" />
+    <Compile Include="ChecklistDAC.cs" />
+    <Compile Include="ChecklistOrdenTrabajoDAC.cs" />
+    <Compile Include="ChequesDAC.cs" />
+    <Compile Include="ChequesFormaPagoDAC.cs" />
+    <Compile Include="CiudadDAC.cs" />
+    <Compile Include="ClienteConcesionarioDAC.cs" />
+    <Compile Include="ClienteFinancieraClienteDAC.cs" />
+    <Compile Include="ClienteOperacionTipogastoDAC.cs" />
+    <Compile Include="ClienteTagDAC.cs" />
+    <Compile Include="Codigo_TAGDAC.cs" />
+    <Compile Include="ComportamientoEstadoDAC.cs" />
+    <Compile Include="ComprobanteCobroFamiliaDAC.cs" />
+    <Compile Include="ConexionSQLFast.cs" />
+    <Compile Include="ConservadorDAC.cs" />
+    <Compile Include="ContratoClienteDAC.cs" />
+    <Compile Include="ContratosDAC.cs" />
+    <Compile Include="ControlGestionDAC.cs" />
+    <Compile Include="DocumentoCambioEstadoDAC.cs" />
+    <Compile Include="DocumentoEstadoDAC.cs" />
+    <Compile Include="EjecutivoHipotecarioDAC.cs" />
+    <Compile Include="FoliadorDAC.cs" />
+    <Compile Include="FormatoCorreoDAC.cs" />
+    <Compile Include="HipotecaCorreoDAC.cs" />
+    <Compile Include="hipotecaFojaDAC.cs" />
+    <Compile Include="HipotecaInsertoDAC.cs" />
+    <Compile Include="HipotecaInsertoTituloDAC.cs" />
+    <Compile Include="HipotecaOperacionEjecutivoDAC.cs" />
+    <Compile Include="HipotecarioFirmaDAC.cs" />
+    <Compile Include="HipotecaRolDAC.cs" />
+    <Compile Include="HipotecaTipoSubProductoDAC.cs" />
+    <Compile Include="IncidenciaDAC.cs" />
+    <Compile Include="InfoAutoDAC.cs" />
+    <Compile Include="CorreoDAC.cs" />
+    <Compile Include="CreditBcaDAC.cs" />
+    <Compile Include="Cta_CteDAC.cs" />
+    <Compile Include="CuentabancoDAC.cs" />
+    <Compile Include="DatoContactoDAC.cs" />
+    <Compile Include="DatosvehiculoDAC.cs" />
+    <Compile Include="DatosVehiculoPeruDAC.cs" />
+    <Compile Include="DireccionesDAC.cs" />
+    <Compile Include="DistribuidorpolizaDAC.cs" />
+    <Compile Include="DocumentosDAC.cs" />
+    <Compile Include="DocumentosOperacionDAC.cs" />
+    <Compile Include="Documento_garantiaDAC.cs" />
+    <Compile Include="EjecutivosucursalDAC.cs" />
+    <Compile Include="EstadooperacionDAC.cs" />
+    <Compile Include="EstadotipooperacionDAC.cs" />
+    <Compile Include="Estado_AGPDAC.cs" />
+    <Compile Include="FacturaDAC.cs" />
+    <Compile Include="Familia_productoDAC.cs" />
+    <Compile Include="FinancieraClienteFinancieraDAC.cs" />
+    <Compile Include="FormaPagoDAC.cs" />
+    <Compile Include="FormaPagoInmatriculacionDAC.cs" />
+    <Compile Include="GarantiaDAC.cs" />
+    <Compile Include="GastooperacionDAC.cs" />
+    <Compile Include="GastooperacionfamiliaDAC.cs" />
+    <Compile Include="GastoOperacionPeruDAC.cs" />
+    <Compile Include="GastosComunesDAC.cs" />
+    <Compile Include="GastosComunesPeruDAC.cs" />
+    <Compile Include="GastosInfraccionDAC.cs" />
+    <Compile Include="GrupoDAC.cs" />
+    <Compile Include="HipotecarioDAC.cs" />
+    <Compile Include="HitoDAC.cs" />
+    <Compile Include="HomologacionPolizaDAC.cs" />
+    <Compile Include="ImportarExcelDAC.cs" />
+    <Compile Include="InfoAutoProcesoDAC.cs" />
+    <Compile Include="InformeDac.cs" />
+    <Compile Include="InfraccionDAC.cs" />
+    <Compile Include="InmatriculacionDAC.cs" />
+    <Compile Include="Leasing_transferenciaDAC.cs" />
+    <Compile Include="MailBCADAC.cs" />
+    <Compile Include="MarcavehiculoDAC.cs" />
+    <Compile Include="MasterBCADAC.cs" />
+    <Compile Include="MatrizExcelDAC.cs" />
+    <Compile Include="Matriz_EscrituraDAC.cs" />
+    <Compile Include="MensajeOrdenTrabajoDAC.cs" />
+    <Compile Include="MeratenenciaDAC.cs" />
+    <Compile Include="ModelovehiculoDAC.cs" />
+    <Compile Include="MovimientocuentaDAC.cs" />
+    <Compile Include="MovimientoCuentaPeruDAC.cs" />
+    <Compile Include="Movimiento_Cta_CteDAC.cs" />
+    <Compile Include="Nomina_rendicionDAC.cs" />
+    <Compile Include="NotariaDAC.cs" />
+    <Compile Include="OficinaRCDAC.cs" />
+    <Compile Include="OperacionXMLDAC.cs" />
+    <Compile Include="OrdenTrabajoActividadLogDAC.cs" />
+    <Compile Include="OrdenTrabajoDAC.cs" />
+    <Compile Include="OrdenTrabajoProductoDocumentoDAC.cs" />
+    <Compile Include="ParametrotipoDAC.cs" />
+    <Compile Include="ParticipanteDAC.cs" />
+    <Compile Include="ParticipanteSucursalDAC.cs" />
+    <Compile Include="ParticipeOperacionDAC.cs" />
+    <Compile Include="PersonaPeruDAC.cs" />
+    <Compile Include="PlandeCuentaDAC.cs" />
+    <Compile Include="PolizaDAC.cs" />
+    <Compile Include="PredatovehiculoDAC.cs" />
+    <Compile Include="PreinscripcionDAC.cs" />
+    <Compile Include="Proceso_cierreDAC.cs" />
+    <Compile Include="ProdClienteDAC.cs" />
+    <Compile Include="programacionGCDAC.cs" />
+    <Compile Include="RepertorioDAC.cs" />
+    <Compile Include="Replace_GarantiaDAC.cs" />
+    <Compile Include="Retiro_carpetaDAC.cs" />
+    <Compile Include="SolicitudCertificadoDAC.cs" />
+    <Compile Include="SolicitudPlacasProvisioriasDAC.cs" />
+    <Compile Include="SolicitudRCDAC.cs" />
+    <Compile Include="StockVentasDAC.cs" />
+    <Compile Include="TasadorDAC.cs" />
+    <Compile Include="TelefonosDAC.cs" />
+    <Compile Include="TipoCarroceriaDAC.cs" />
+    <Compile Include="TipoClasificacionVehicularDAC.cs" />
+    <Compile Include="TipoFormaPagoDAC.cs" />
+    <Compile Include="TipoGastoPeruDAC.cs" />
+    <Compile Include="TipoInfraccionDAC.cs" />
+    <Compile Include="TipoMonedaDAC.cs" />
+    <Compile Include="TipoSolicitudRCDAC.cs" />
+    <Compile Include="TipoNominaDAC.cs" />
+    <Compile Include="TipoSolicitudRCProductoDAC.cs" />
+    <Compile Include="TipovehiculoDAC.cs" />
+    <Compile Include="ClienteDAC.cs" />
+    <Compile Include="ComunaDAC.cs" />
+    <Compile Include="DatoeconomicoDAC.cs" />
+    <Compile Include="ModuloclienteDAC.cs" />
+    <Compile Include="OperacionDAC.cs" />
+    <Compile Include="PaisDAC.cs" />
+    <Compile Include="ParametroDAC.cs" />
+    <Compile Include="OpcionmenuDAC.cs" />
+    <Compile Include="PerfilDAC.cs" />
+    <Compile Include="PersonaDAC.cs" />
+    <Compile Include="PersoneroDAC.cs" />
+    <Compile Include="RegionDAC.cs" />
+    <Compile Include="SucursalclienteDAC.cs" />
+    <Compile Include="TasacionSIIDAC.cs" />
+    <Compile Include="TipogastoDAC.cs" />
+    <Compile Include="TipooperacionDAC.cs" />
+    <Compile Include="TransferenciaDAC.cs" />
+    <Compile Include="UsuarioDAC.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioEstadoDAC.cs" />
+    <Compile Include="ValorseguroclienteDAC.cs" />
+    <Compile Include="ValorSeguroVehiculoDAC.cs" />
+    <Compile Include="VentaSoapDAC.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CENTIDAD\CENTIDAD.csproj">
+      <Project>{911D8A46-D47C-4E95-873F-5317C3AAB503}</Project>
+      <Name>CENTIDAD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Auto_Mae_AdquirienteAGPView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RutEmpresaCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usr_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDocumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Auto_Mae_AdquirienteAGPViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Auto_Mae_AdquirienteAGPViewResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Auto_Mae_CompraParaAGPView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RutEmpresaCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usr_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDocumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Auto_Mae_CompraParaAGPViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Auto_Mae_CompraParaAGPViewResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Auto_Mae_DatosVehiculosAGPView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RutEmpresaCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usr_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDocumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Auto_Mae_DatosVehiculosAGPViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Auto_Mae_DatosVehiculosAGPViewResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Auto_Mae_FacturasAGPView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RutEmpresaCD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usr_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroDocumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Auto_Mae_FacturasAGPViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Auto_Mae_FacturasAGPViewResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Auto_Mae_AdquirienteAGPViewSoapIn">
+    <wsdl:part name="parameters" element="tns:Auto_Mae_AdquirienteAGPView" />
+  </wsdl:message>
+  <wsdl:message name="Auto_Mae_AdquirienteAGPViewSoapOut">
+    <wsdl:part name="parameters" element="tns:Auto_Mae_AdquirienteAGPViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auto_Mae_CompraParaAGPViewSoapIn">
+    <wsdl:part name="parameters" element="tns:Auto_Mae_CompraParaAGPView" />
+  </wsdl:message>
+  <wsdl:message name="Auto_Mae_CompraParaAGPViewSoapOut">
+    <wsdl:part name="parameters" element="tns:Auto_Mae_CompraParaAGPViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auto_Mae_DatosVehiculosAGPViewSoapIn">
+    <wsdl:part name="parameters" element="tns:Auto_Mae_DatosVehiculosAGPView" />
+  </wsdl:message>
+  <wsdl:message name="Auto_Mae_DatosVehiculosAGPViewSoapOut">
+    <wsdl:part name="parameters" element="tns:Auto_Mae_DatosVehiculosAGPViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="Auto_Mae_FacturasAGPViewSoapIn">
+    <wsdl:part name="parameters" element="tns:Auto_Mae_FacturasAGPView" />
+  </wsdl:message>
+  <wsdl:message name="Auto_Mae_FacturasAGPViewSoapOut">
+    <wsdl:part name="parameters" element="tns:Auto_Mae_FacturasAGPViewResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="Auto_Mae_AdquirienteAGPView">
+      <wsdl:input message="tns:Auto_Mae_AdquirienteAGPViewSoapIn" />
+      <wsdl:output message="tns:Auto_Mae_AdquirienteAGPViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Auto_Mae_CompraParaAGPView">
+      <wsdl:input message="tns:Auto_Mae_CompraParaAGPViewSoapIn" />
+      <wsdl:output message="tns:Auto_Mae_CompraParaAGPViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Auto_Mae_DatosVehiculosAGPView">
+      <wsdl:input message="tns:Auto_Mae_DatosVehiculosAGPViewSoapIn" />
+      <wsdl:output message="tns:Auto_Mae_DatosVehiculosAGPViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Auto_Mae_FacturasAGPView">
+      <wsdl:input message="tns:Auto_Mae_FacturasAGPViewSoapIn" />
+      <wsdl:output message="tns:Auto_Mae_FacturasAGPViewSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Auto_Mae_AdquirienteAGPView">
+      <soap:operation soapAction="http://tempuri.org/Auto_Mae_AdquirienteAGPView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Auto_Mae_CompraParaAGPView">
+      <soap:operation soapAction="http://tempuri.org/Auto_Mae_CompraParaAGPView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Auto_Mae_DatosVehiculosAGPView">
+      <soap:operation soapAction="http://tempuri.org/Auto_Mae_DatosVehiculosAGPView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Auto_Mae_FacturasAGPView">
+      <soap:operation soapAction="http://tempuri.org/Auto_Mae_FacturasAGPView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Auto_Mae_AdquirienteAGPView">
+      <soap12:operation soapAction="http://tempuri.org/Auto_Mae_AdquirienteAGPView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Auto_Mae_CompraParaAGPView">
+      <soap12:operation soapAction="http://tempuri.org/Auto_Mae_CompraParaAGPView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Auto_Mae_DatosVehiculosAGPView">
+      <soap12:operation soapAction="http://tempuri.org/Auto_Mae_DatosVehiculosAGPView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Auto_Mae_FacturasAGPView">
+      <soap12:operation soapAction="http://tempuri.org/Auto_Mae_FacturasAGPView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://200.68.25.250/ServMrubeni.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://200.68.25.250/ServMrubeni.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

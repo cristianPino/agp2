@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WSIntegracionAGPPeru" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WSIntegracionAGPPeru" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TX_DATO_GENERAL_NOTA_PEDIDO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NUMERO_NOTA_PEDIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APELLIDO_PATERNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APELLIDO_MATERNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOMICILIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_IDENTIDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NRO_DOCUMENTO_IDENTIDAD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESTADO_CIVIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOMBRES_CONYUGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_IDENTIDAD_CONYUGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NRO_DOCUMENTO_IDENTIDAD_CONYUGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAZON_SOCIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INSCRIPCION_REGISTRAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOMICILIO_RAZON_SOCIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPRESENTANTE_LEGAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_IDENTIDAD_REP_LEGAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NRO_DOCUMENTO_IDENTIDAD_REP_LEGAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_VIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_SERIE_VIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MARCA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="A_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="A_FABRICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CLASE_CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COLOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_MOTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POTENCIA_MOTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMBUSTIBLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CILINDROS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CILINDRADA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LONGITUD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_PASAJEROS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PESO_NETO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CARGA_UTIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PESO_BRUTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_ASIENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_EJES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANCHO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_PUERTAS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ALTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_RUEDAS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FORMULA_RODANTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DOCUMENTO_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_EMISION_DOC_VENTA" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MONTO_TOTAL_VEHICULO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TIPO_MONEDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATEGORIA_MTC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USO_MTC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUSR_ID_USUARIO_CREACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_CREACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CUSR_ID_USUARIO_ULTIMA_MODIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_MODIFICACION" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IP_CREACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IP_MODIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASESOR_COMERCIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ADMINISTRADOR_VENTA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FORMA_PAGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APELLIDO_PATERNO_CONYUGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APELLIDO_MATERNO_CONYUGE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_PROVINCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROVINCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_DISTRITO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DISTRITO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TX_INFORMACION_RETORNO" nillable="true" type="tns:ArrayOfTX_INFORMACION_RETORNO">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TX_DETALLE_FORMA_PAGO" nillable="true" type="tns:ArrayOfTX_DETALLE_FORMA_PAGO">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TX_DATO_GENERAL_NOTA_PEDIDO" nillable="true" type="tns:TX_DATO_GENERAL_NOTA_PEDIDO" />
+  <xs:complexType name="ArrayOfTX_INFORMACION_RETORNO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TX_INFORMACION_RETORNO" nillable="true" type="tns:TX_INFORMACION_RETORNO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTX_INFORMACION_RETORNO" nillable="true" type="tns:ArrayOfTX_INFORMACION_RETORNO" />
+  <xs:complexType name="TX_INFORMACION_RETORNO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_INFO_RETORNO" type="xs:int" />
+      <xs:element minOccurs="0" name="NUMERO_NOTA_PEDIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_REGISTRO_MTC" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NUMERO_PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUSR_ID_USUARIO_CREACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_CREACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CUSR_ID_USUARIO_ULTIMA_MODIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_MODIFICACION" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IP_CREACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IP_MODIFICACION" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TX_INFORMACION_RETORNO" nillable="true" type="tns:TX_INFORMACION_RETORNO" />
+  <xs:complexType name="ArrayOfTX_DETALLE_FORMA_PAGO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TX_DETALLE_FORMA_PAGO" nillable="true" type="tns:TX_DETALLE_FORMA_PAGO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTX_DETALLE_FORMA_PAGO" nillable="true" type="tns:ArrayOfTX_DETALLE_FORMA_PAGO" />
+  <xs:complexType name="TX_DETALLE_FORMA_PAGO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID_DETALLE_FORMA_PAGO" type="xs:int" />
+      <xs:element minOccurs="0" name="NUMERO_NOTA_PEDIDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_CUENTA_CORRIENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MEDIO_PAGO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONTO_ABONO" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FECHA_ABONO" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CUSR_ID_USUARIO_CREACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_CREACION" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CUSR_ID_USUARIO_ULTIMA_MODIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FECHA_MODIFICACION" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IP_CREACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IP_MODIFICACION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BANCO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MONEDA_CUENTA_BANCO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TX_DETALLE_FORMA_PAGO" nillable="true" type="tns:TX_DETALLE_FORMA_PAGO" />
+</xs:schema>

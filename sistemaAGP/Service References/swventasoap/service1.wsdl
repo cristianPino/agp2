@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="EmitirVentaSoap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmitirVentaSoapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmitirVentaSoapResult" type="tns:RespuestaVentaSoap" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaVentaSoap" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoEstado" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RespuestaSalidaVentaSoap">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RespuestaVentaSoap">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="tns:DescripcionRespuestaVentaSoap" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DescripcionRespuestaVentaSoap">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroPoliza" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroFolio" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="VigenciaDesde" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vigenciahasta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UrlPolizaSoap" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroPatente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigitoVerificadorPatente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoVehiculo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroMotor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Marca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modelo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RutPropietario" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigitoVerificadorPropietario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoPaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoMaterno" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RespuestaErrorVentaSoap">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RespuestaVentaSoap">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="descripcionError" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="RespuestaVentaSoap" nillable="true" type="tns:RespuestaVentaSoap" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EmitirVentaSoapSoapIn">
+    <wsdl:part name="parameters" element="tns:EmitirVentaSoap" />
+  </wsdl:message>
+  <wsdl:message name="EmitirVentaSoapSoapOut">
+    <wsdl:part name="parameters" element="tns:EmitirVentaSoapResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmitirVentaSoapHttpGetIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EmitirVentaSoapHttpGetOut">
+    <wsdl:part name="Body" element="tns:RespuestaVentaSoap" />
+  </wsdl:message>
+  <wsdl:message name="EmitirVentaSoapHttpPostIn">
+    <wsdl:part name="xml" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EmitirVentaSoapHttpPostOut">
+    <wsdl:part name="Body" element="tns:RespuestaVentaSoap" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="EmitirVentaSoap">
+      <wsdl:input message="tns:EmitirVentaSoapSoapIn" />
+      <wsdl:output message="tns:EmitirVentaSoapSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="EmitirVentaSoap">
+      <wsdl:input message="tns:EmitirVentaSoapHttpGetIn" />
+      <wsdl:output message="tns:EmitirVentaSoapHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="EmitirVentaSoap">
+      <wsdl:input message="tns:EmitirVentaSoapHttpPostIn" />
+      <wsdl:output message="tns:EmitirVentaSoapHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EmitirVentaSoap">
+      <soap:operation soapAction="http://tempuri.org/EmitirVentaSoap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EmitirVentaSoap">
+      <soap12:operation soapAction="http://tempuri.org/EmitirVentaSoap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="EmitirVentaSoap">
+      <http:operation location="/EmitirVentaSoap" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="EmitirVentaSoap">
+      <http:operation location="/EmitirVentaSoap" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://wsventasoap.bciseguros.cl/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://wsventasoap.bciseguros.cl/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://wsventasoap.bciseguros.cl/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://wsventasoap.bciseguros.cl/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

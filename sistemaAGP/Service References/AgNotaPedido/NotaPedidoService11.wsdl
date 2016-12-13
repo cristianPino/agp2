@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Minvestgroup.com" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://wsag.minvest.net/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NotaPedidoService" targetNamespace="http://Minvestgroup.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://wsag.minvest.net/" location="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Minvestgroup.com/Imports">
+      <xsd:import schemaLocation="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?xsd=xsd0" namespace="http://Minvestgroup.com" />
+      <xsd:import schemaLocation="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Gildemeister.WCF.BE.NotaPedido" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INotaPedidoService_RegistraNotaPedido_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistraNotaPedido" />
+  </wsdl:message>
+  <wsdl:message name="INotaPedidoService_RegistraNotaPedido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistraNotaPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotaPedidoService_ActualizaEstadoNotaPedido_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaEstadoNotaPedido" />
+  </wsdl:message>
+  <wsdl:message name="INotaPedidoService_ActualizaEstadoNotaPedido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizaEstadoNotaPedidoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INotaPedidoService">
+    <wsdl:operation name="RegistraNotaPedido">
+      <wsdl:input wsaw:Action="http://Minvestgroup.com/INotaPedidoService/RegistraNotaPedido" message="tns:INotaPedidoService_RegistraNotaPedido_InputMessage" />
+      <wsdl:output wsaw:Action="http://Minvestgroup.com/INotaPedidoService/RegistraNotaPedidoResponse" message="tns:INotaPedidoService_RegistraNotaPedido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaEstadoNotaPedido">
+      <wsdl:input wsaw:Action="http://Minvestgroup.com/INotaPedidoService/ActualizaEstadoNotaPedido" message="tns:INotaPedidoService_ActualizaEstadoNotaPedido_InputMessage" />
+      <wsdl:output wsaw:Action="http://Minvestgroup.com/INotaPedidoService/ActualizaEstadoNotaPedidoResponse" message="tns:INotaPedidoService_ActualizaEstadoNotaPedido_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="NotaPedidoService">
+    <wsdl:port name="BasicHttpBinding_INotaPedidoService" binding="i0:BasicHttpBinding_INotaPedidoService">
+      <soap:address location="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

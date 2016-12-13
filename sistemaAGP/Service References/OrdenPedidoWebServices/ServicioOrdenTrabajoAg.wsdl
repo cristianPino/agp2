@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetServicios">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServiciosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiciosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentos">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDocumentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuienPaga">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetQuienPagaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuienPagaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrdenPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrdenPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddOrdenPedidoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetServiciosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServicios" />
+  </wsdl:message>
+  <wsdl:message name="GetServiciosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiciosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentos" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuienPagaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuienPaga" />
+  </wsdl:message>
+  <wsdl:message name="GetQuienPagaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuienPagaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrdenPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrdenPedido" />
+  </wsdl:message>
+  <wsdl:message name="AddOrdenPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrdenPedidoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioOrdenTrabajoAgSoap">
+    <wsdl:operation name="GetServicios">
+      <wsdl:input message="tns:GetServiciosSoapIn" />
+      <wsdl:output message="tns:GetServiciosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentos">
+      <wsdl:input message="tns:GetDocumentosSoapIn" />
+      <wsdl:output message="tns:GetDocumentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuienPaga">
+      <wsdl:input message="tns:GetQuienPagaSoapIn" />
+      <wsdl:output message="tns:GetQuienPagaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrdenPedido">
+      <wsdl:input message="tns:AddOrdenPedidoSoapIn" />
+      <wsdl:output message="tns:AddOrdenPedidoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioOrdenTrabajoAgSoap" type="tns:ServicioOrdenTrabajoAgSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServicios">
+      <soap:operation soapAction="http://tempuri.org/GetServicios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentos">
+      <soap:operation soapAction="http://tempuri.org/GetDocumentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuienPaga">
+      <soap:operation soapAction="http://tempuri.org/GetQuienPaga" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrdenPedido">
+      <soap:operation soapAction="http://tempuri.org/AddOrdenPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioOrdenTrabajoAgSoap12" type="tns:ServicioOrdenTrabajoAgSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServicios">
+      <soap12:operation soapAction="http://tempuri.org/GetServicios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentos">
+      <soap12:operation soapAction="http://tempuri.org/GetDocumentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuienPaga">
+      <soap12:operation soapAction="http://tempuri.org/GetQuienPaga" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrdenPedido">
+      <soap12:operation soapAction="http://tempuri.org/AddOrdenPedido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioOrdenTrabajoAg">
+    <wsdl:port name="ServicioOrdenTrabajoAgSoap" binding="tns:ServicioOrdenTrabajoAgSoap">
+      <soap:address location="http://sistema.agpsa.cl:8083/ServicioOrdenTrabajoAg.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioOrdenTrabajoAgSoap12" binding="tns:ServicioOrdenTrabajoAgSoap12">
+      <soap12:address location="http://sistema.agpsa.cl:8083/ServicioOrdenTrabajoAg.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

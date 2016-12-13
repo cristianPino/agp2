@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a523b031-875e-49f2-ace6-5be7f0327e0d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NotaPedidoService.xsd" MetadataType="Schema" ID="807a6d30-d1bf-4019-805e-7bfb5e49e4b4" SourceId="1" SourceUrl="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NotaPedidoService1.xsd" MetadataType="Schema" ID="eaa15327-7322-4be2-b230-ad38146f863a" SourceId="1" SourceUrl="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NotaPedidoService1.wsdl" MetadataType="Wsdl" ID="acfef8e0-bccc-4191-b805-9f1db6331f8a" SourceId="1" SourceUrl="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="NotaPedidoService11.wsdl" MetadataType="Wsdl" ID="02a05a9d-f6cd-444b-8e21-65683cc858c0" SourceId="1" SourceUrl="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?wsdl" />
+    <MetadataFile FileName="NotaPedidoService2.xsd" MetadataType="Schema" ID="c7b801ee-d946-4512-9cca-3ce247d6b71a" SourceId="1" SourceUrl="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NotaPedidoService.disco" MetadataType="Disco" ID="3e84b484-9619-4af9-8b28-4a4b0e46ae17" SourceId="1" SourceUrl="http://wsag.minvest.net/WS_NotaPedido/NotaPedidoService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

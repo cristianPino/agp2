@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{911D8A46-D47C-4E95-873F-5317C3AAB503}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CENTIDAD</RootNamespace>
+    <AssemblyName>CENTIDAD</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acreedor.cs" />
+    <Compile Include="ActividadDeOrdenTrabajo.cs" />
+    <Compile Include="Agenda.cs" />
+    <Compile Include="AlertaestadoClinte.cs" />
+    <Compile Include="AlertaestadoFamilia.cs" />
+    <Compile Include="Analisis_Alza.cs" />
+    <Compile Include="AutorizacionAlzamiento.cs" />
+    <Compile Include="BancoCliente.cs" />
+    <Compile Include="BancoFinanciera.cs" />
+    <Compile Include="BienesNumeroCliente.cs" />
+    <Compile Include="Checklist.cs" />
+    <Compile Include="ChecklistOrdenTrabajo.cs" />
+    <Compile Include="Cheques.cs" />
+    <Compile Include="ChequesFormaPago.cs" />
+    <Compile Include="Ciudad.cs" />
+    <Compile Include="ClienteConcesionario.cs" />
+    <Compile Include="ClienteFinanciera.cs" />
+    <Compile Include="ClienteFinancieraCliente.cs" />
+    <Compile Include="ClienteOperacionTipogasto.cs" />
+    <Compile Include="ClienteTag.cs" />
+    <Compile Include="Codigo_TAG.cs" />
+    <Compile Include="ComportamientoEstado.cs" />
+    <Compile Include="ComprobanteCobroFamilia.cs" />
+    <Compile Include="Comuna.cs" />
+    <Compile Include="Conservador.cs" />
+    <Compile Include="ConservadorComuna.cs" />
+    <Compile Include="ContratoCliente.cs" />
+    <Compile Include="Contratos.cs" />
+    <Compile Include="Control_gestion.cs" />
+    <Compile Include="Cotizacion.cs" />
+    <Compile Include="DatoFactura.cs" />
+    <Compile Include="DocumentoCambioEstado.cs" />
+    <Compile Include="DocumentoEstado.cs" />
+    <Compile Include="DocumentoOrdenTrabajo.cs" />
+    <Compile Include="EjecutivoHipotecario.cs" />
+    <Compile Include="Foliador.cs" />
+    <Compile Include="FormatoCorreo.cs" />
+    <Compile Include="HipotecaClausula.cs" />
+    <Compile Include="HipotecaCorreo.cs" />
+    <Compile Include="hipotecaFoja.cs" />
+    <Compile Include="HipotecaInserto.cs" />
+    <Compile Include="HipotecaInsertoTitulo.cs" />
+    <Compile Include="HipotecaOperacionEjecutivo.cs" />
+    <Compile Include="HipotecarioFirma.cs" />
+    <Compile Include="HipotecarioTituloFirma .cs" />
+    <Compile Include="HipotecaRol.cs" />
+    <Compile Include="HipotecaSubsidio.cs" />
+    <Compile Include="HipotecaTipoSubProducto.cs" />
+    <Compile Include="InfoAuto.cs" />
+    <Compile Include="Correo.cs" />
+    <Compile Include="CreditBca.cs" />
+    <Compile Include="CuentaBanco.cs" />
+    <Compile Include="Cuenta_Corriente.cs" />
+    <Compile Include="DatoContacto.cs" />
+    <Compile Include="DatoEconomico.cs" />
+    <Compile Include="DatosVehiculo.cs" />
+    <Compile Include="DatosVehiculoPeru.cs" />
+    <Compile Include="Direcciones.cs" />
+    <Compile Include="DistribuidorPoliza.cs" />
+    <Compile Include="Documentos.cs" />
+    <Compile Include="DocumentosOperacion.cs" />
+    <Compile Include="Documento_garantia.cs" />
+    <Compile Include="Ejecutivosucursal.cs" />
+    <Compile Include="EstadoOperacion.cs" />
+    <Compile Include="EstadoTipoOperacion.cs" />
+    <Compile Include="Estado_AGP.cs" />
+    <Compile Include="Factura.cs" />
+    <Compile Include="Familia_Producto.cs" />
+    <Compile Include="FinancieraClienteFianciera.cs" />
+    <Compile Include="FormaPago.cs" />
+    <Compile Include="FormaPagoInmatriculacion.cs" />
+    <Compile Include="Garantia.cs" />
+    <Compile Include="GastoOperacion.cs" />
+    <Compile Include="Gastooperacionfamilia.cs" />
+    <Compile Include="GastoOperacionPeru.cs" />
+    <Compile Include="GastosComunes.cs" />
+    <Compile Include="GastosComunesPeru.cs" />
+    <Compile Include="GastosInfraccion.cs" />
+    <Compile Include="Grupo.cs" />
+    <Compile Include="Hipotecario.cs" />
+    <Compile Include="Hipoteca_FormaPago.cs" />
+    <Compile Include="Hipoteca_Prohibicion.cs" />
+    <Compile Include="Hito.cs" />
+    <Compile Include="HomologacionPoliza.cs" />
+    <Compile Include="InfoAutoDetalle.cs" />
+    <Compile Include="InfoAutoProceso.cs" />
+    <Compile Include="Informe.cs" />
+    <Compile Include="Infraccion.cs" />
+    <Compile Include="Inmatriculacion.cs" />
+    <Compile Include="Leasing _transferencia.cs" />
+    <Compile Include="MailBCA.cs" />
+    <Compile Include="Marcavehiculo.cs" />
+    <Compile Include="MasterBCA.cs" />
+    <Compile Include="Matriz_Escritura.cs" />
+    <Compile Include="MensajeOrdenTrabajo.cs" />
+    <Compile Include="Meratenencia.cs" />
+    <Compile Include="ModeloVehiculo.cs" />
+    <Compile Include="ModuloCliente.cs" />
+    <Compile Include="MovimientoCuenta.cs" />
+    <Compile Include="MovimientoCuentaPeru.cs" />
+    <Compile Include="Movimiento_Cta_Cte.cs" />
+    <Compile Include="Nomina_rendicion.cs" />
+    <Compile Include="Notaria.cs" />
+    <Compile Include="OficinaRC.cs" />
+    <Compile Include="OperacionPeru.cs" />
+    <Compile Include="OperacionXML.cs" />
+    <Compile Include="OrdenTrabajo.cs" />
+    <Compile Include="OrdenTrabajoActividadLog.cs" />
+    <Compile Include="OrdenTrabajoProductoDocumento.cs" />
+    <Compile Include="OrdenTrabajoTipoOperacion.cs" />
+    <Compile Include="ParticipanteOperacion.cs" />
+    <Compile Include="ParticipanteSucursal.cs" />
+    <Compile Include="ParticipeOperacion.cs" />
+    <Compile Include="PermisoCirculacion.cs" />
+    <Compile Include="PersonaPeru.cs" />
+    <Compile Include="PlandeCuenta.cs" />
+    <Compile Include="Poliza.cs" />
+    <Compile Include="Proceso_cierre.cs" />
+    <Compile Include="ProdCliente.cs" />
+    <Compile Include="ProgramacionGC.cs" />
+    <Compile Include="Repertorio.cs" />
+    <Compile Include="Replace_garantia.cs" />
+    <Compile Include="RespuestaAgp.cs" />
+    <Compile Include="Retiro_Carpeta.cs" />
+    <Compile Include="SolicitudCertificado.cs" />
+    <Compile Include="SolicitudPlacasProvisorias.cs" />
+    <Compile Include="SolicitudRC.cs" />
+    <Compile Include="StockVentas.cs" />
+    <Compile Include="Tasador.cs" />
+    <Compile Include="Telefonos.cs" />
+    <Compile Include="TipoCarroceria.cs" />
+    <Compile Include="TipoClasificacionVehicular.cs" />
+    <Compile Include="TipoFormaPago.cs" />
+    <Compile Include="TipoGastoPeru.cs" />
+    <Compile Include="TipoInfraccion.cs" />
+    <Compile Include="TipoMoneda.cs" />
+    <Compile Include="TipoSolicitudRC.cs" />
+    <Compile Include="TipoSolicitudRCProducto.cs" />
+    <Compile Include="UsuarioEstado.cs" />
+    <Compile Include="ValorSeguroCliente.cs" />
+    <Compile Include="Pais.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Operacion.cs" />
+    <Compile Include="ParametroRPT.cs" />
+    <Compile Include="Parametrotipo.cs" />
+    <Compile Include="Participante.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Parametro.cs" />
+    <Compile Include="Personero.cs" />
+    <Compile Include="Predatovehiculo.cs" />
+    <Compile Include="Preinscripcion.cs" />
+    <Compile Include="Region.cs" />
+    <Compile Include="SucursalCliente.cs" />
+    <Compile Include="TasacionSII.cs" />
+    <Compile Include="OpcionMenu.cs" />
+    <Compile Include="Perfil.cs" />
+    <Compile Include="Tipogasto.cs" />
+    <Compile Include="TipoNomina.cs" />
+    <Compile Include="TipoOperacion.cs" />
+    <Compile Include="Tipovehiculo.cs" />
+    <Compile Include="Transferencia.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValorSeguroVehiculo.cs" />
+    <Compile Include="VentaSoap.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

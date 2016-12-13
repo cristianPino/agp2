@@ -1,0 +1,185 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master2.master.cs" Inherits="sistemaAGP.Master2" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="/estilos/Master2.css" />
+    
+       <script type="text/javascript" src="/javascript/jquery-1.7.2.min.js"></script> 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true">
+	</ajaxToolkit:ToolkitScriptManager>
+          <script type="text/javascript">
+              $(function () {
+                  $("#mostrar").click(function (event) {
+
+                      event.preventDefault();
+                      $("#div_menu").slideToggle("slow");
+
+                      $("#div_fondo").slideToggle("slow");
+                  });
+
+                  $("#div_menu a").click(function () {
+
+
+                      $("#div_menu").slideUp();
+                      $("#div_fondo").slideUp();
+
+                      var url = $('a').attr('href');
+                      location.href = url;
+                  });
+
+                  $("#div_fondo").click(function (event) {
+                      event.preventDefault();
+                      $("#div_menu").slideUp();
+                      $("#div_fondo").slideUp();
+
+                  });
+              });
+</script>
+                
+    <div>
+        <div id="div_fondo"></div> 
+        <div class="container_12 border-site">
+          
+        <div class="divCabecera">
+            <div class="divCabeceraLogo">
+                <asp:Image ID="imgLogo" runat="server" height="100%" width="35%" />
+            </div>
+            <div class="divCabeceraMenu">
+                <asp:LinkButton ID="lnkCerrar" runat="server" Text="Salir" 
+                                                            CausesValidation="false" Font-Size="x-small" Style="color: #6d6d6d"
+                                                            ToolTip="Salir"></asp:LinkButton></div>
+            <div class="divCabeceraMenu">
+                <asp:Label ID="lblNombre" runat="server" Text="" Font-Size="x-small"></asp:Label></div>
+            <div id="div_boton_menu" class="divCabeceraMenuBoton">
+
+                <button name="boton" id="mostrar" type="button" class="botonxx"> <img src="../imagenes/large-tiles.png" width="30px" height="30px"/></button>
+                  
+                   
+                </div>
+            <div id="div_help_menu" class="divCabeceraMenuBoton">
+
+             <a id="lnkAyuda" runat="server"><img id="imeAyuda" src="../imagenes/sistema/static/hipotecario/help.png"/></a>
+                  
+                   
+                </div>
+                
+                </div>
+
+        <div class="divEspacio">
+        </div>
+         
+        <div class="divTitulo">
+            <div class="divTituloTexto" style="padding-top: 5px;">
+                
+                 <b>  <asp:Label ID="lblTitulo" runat="server" Text="" Font-Size="Large" ></asp:Label></b>
+            </div>
+        </div>
+       
+
+               <div id="div_menu" style="max-width:400px; overflow-x:auto" >           
+                    
+                    <div class="menuv" >
+                    <table class="table_menu">
+                    <tr>           
+				    <td id="ulMenu" runat="server">
+				    </td>
+                    </tr>
+                    </table>
+			</div>
+            
+            </div>
+        <div class="divEspacio">
+        </div>
+        	<div class="grid_9" style="width:100%">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+               
+            </asp:ContentPlaceHolder>
+               <br/>
+      <br/>
+       <br/>
+      <br/>
+     
+             
+        </div>
+   
+           
+               
+    </div>
+  
+    
+    </div>
+    
+            
+
+	<asp:Panel ID="pnlCerrar" runat="server" CssClass="logout">
+		<div class="logout-texto">
+			<table>
+				<tr>
+					<td colspan="2" class="style2">
+						¿Está seguro de salir?
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<asp:Button ID="btnOK" runat="server" Text="Aceptar" OnClick="btnOK_Click" Width="80px" CausesValidation="false" CssClass="button" />
+					</td>
+					<td>
+						<asp:Button ID="btnCancel" runat="server" Text="Cancelar" Width="80px" CssClass="button_rojo" />
+					</td>
+				</tr>
+			</table>
+		          
+         </div>   
+           
+  </asp:Panel>           
+                
+	<ajaxToolkit:modalpopupextender ID="mpeCerrar" runat="server" CancelControlID="btnCancel" PopupControlID="pnlCerrar" TargetControlID="lnkCerrar" BackgroundCssClass="overlay">
+	</ajaxToolkit:modalpopupextender>
+	<ajaxToolkit:confirmbuttonextender ID="cbeCerrar" runat="server"  DisplayModalPopupID="mpeCerrar" TargetControlID="lnkCerrar">
+	</ajaxToolkit:confirmbuttonextender>
+    
+    <asp:UpdateProgress ID="UpdateProg1" DisplayAfter="0" runat="server">
+		<ProgressTemplate>
+			<div class="updateProgressContainer">
+				<div class="updateProgress">
+					<div style="position: relative; text-align: center;">
+						<img src="../imagenes/sistema/gif/loading.gif" style="vertical-align: middle" alt="Procesando" />
+						Procesando ...
+					</div>
+				</div>
+			</div>
+		</ProgressTemplate>
+	</asp:UpdateProgress>
+
+         
+    
+             <div class="divInfo">
+                
+            <center>
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Image ID="imgInfo" runat="server" />
+                        </td>
+                        <td>
+                            <asp:Label ID="lblInfo" runat="server"></asp:Label></td>                        
+                    </tr>
+                </table>                
+            </center>
+      <div align="right" style="position:absolute;right:5px; bottom:15px">    <asp:Label ID="lblVersion"  Font-Size="XX-Small" Text="2016 AGP SA. Sistema Control de Flujos de Negocios. Versión: 1.0" runat="server"></asp:Label>
+</div>
+        </div>
+          
+     
+    </form>
+</body>
+</html>

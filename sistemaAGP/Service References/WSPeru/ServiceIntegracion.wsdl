@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceIntegracion" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://190.196.121.51:8081/ServiceIntegracion.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://190.196.121.51:8081/ServiceIntegracion.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://190.196.121.51:8081/ServiceIntegracion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WSIntegracionAGPPeru" />
+      <xsd:import schemaLocation="http://190.196.121.51:8081/ServiceIntegracion.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceIntegracion_GetNotaVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotaVenta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceIntegracion_GetNotaVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotaVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceIntegracion_SetInformacionRetorno_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetInformacionRetorno" />
+  </wsdl:message>
+  <wsdl:message name="IServiceIntegracion_SetInformacionRetorno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetInformacionRetornoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceIntegracion_Encriptar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Encriptar" />
+  </wsdl:message>
+  <wsdl:message name="IServiceIntegracion_Encriptar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EncriptarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceIntegracion_ListaBancos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaBancos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceIntegracion_ListaBancos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaBancosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceIntegracion_ListaMonedas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaMonedas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceIntegracion_ListaMonedas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaMonedasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceIntegracion">
+    <wsdl:operation name="GetNotaVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceIntegracion/GetNotaVenta" message="tns:IServiceIntegracion_GetNotaVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceIntegracion/GetNotaVentaResponse" message="tns:IServiceIntegracion_GetNotaVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInformacionRetorno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceIntegracion/SetInformacionRetorno" message="tns:IServiceIntegracion_SetInformacionRetorno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceIntegracion/SetInformacionRetornoResponse" message="tns:IServiceIntegracion_SetInformacionRetorno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Encriptar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceIntegracion/Encriptar" message="tns:IServiceIntegracion_Encriptar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceIntegracion/EncriptarResponse" message="tns:IServiceIntegracion_Encriptar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaBancos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceIntegracion/ListaBancos" message="tns:IServiceIntegracion_ListaBancos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceIntegracion/ListaBancosResponse" message="tns:IServiceIntegracion_ListaBancos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaMonedas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceIntegracion/ListaMonedas" message="tns:IServiceIntegracion_ListaMonedas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceIntegracion/ListaMonedasResponse" message="tns:IServiceIntegracion_ListaMonedas_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceIntegracion" type="tns:IServiceIntegracion">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNotaVenta">
+      <soap:operation soapAction="http://tempuri.org/IServiceIntegracion/GetNotaVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInformacionRetorno">
+      <soap:operation soapAction="http://tempuri.org/IServiceIntegracion/SetInformacionRetorno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encriptar">
+      <soap:operation soapAction="http://tempuri.org/IServiceIntegracion/Encriptar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBancos">
+      <soap:operation soapAction="http://tempuri.org/IServiceIntegracion/ListaBancos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaMonedas">
+      <soap:operation soapAction="http://tempuri.org/IServiceIntegracion/ListaMonedas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceIntegracion">
+    <wsdl:port name="BasicHttpBinding_IServiceIntegracion" binding="tns:BasicHttpBinding_IServiceIntegracion">
+      <soap:address location="http://190.196.121.51:8081/ServiceIntegracion.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

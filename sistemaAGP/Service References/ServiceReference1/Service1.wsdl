@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getMatrizEscritura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tipo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_cliente" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMatrizEscrituraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMatrizEscrituraResult" type="tns:Matriz_Escritura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Matriz_Escritura">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Cod_matriz" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_cliente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cod_notaria" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url_matriz" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo_documento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Url_destino" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getListaModelosVehiculos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListaModelosVehiculosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListaModelosVehiculosResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getListaColoresVehiculos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListaColoresVehiculosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListaColoresVehiculosResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListaSolicitantes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="contextKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListaSolicitantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListaSolicitantesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListadoRegiones">
+        <s:complexType />
+      </s:element>
+      <s:element name="getListadoRegionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListadoRegionesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListadoCiudades">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="region" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListadoCiudadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListadoCiudadesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListadoComunas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ciudad" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListadoComunasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListadoComunasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Encriptar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncriptarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncriptarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Desencriptar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DesencriptarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DesencriptarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="act_valor_patente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="act_valor_patenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act_valor_patenteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="act_valor_patente_por_motor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="act_valor_patente_por_motorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act_valor_patente_por_motorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="act_valor_patente_por_numero_operacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numero_operacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="act_valor_patente_por_numero_operacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act_valor_patente_por_numero_operacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="act_valor_motor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="act_valor_motorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="act_valor_motorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionPermisoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionPermisoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInformacionPermisoXMLResult" type="tns:PermisoCirculacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PermisoCirculacion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idOperacion" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="datosVehiculo" type="tns:DatosVehiculoPC" />
+          <s:element minOccurs="0" maxOccurs="1" name="datosFactura" type="tns:DatosFacturaPC" />
+          <s:element minOccurs="0" maxOccurs="1" name="datosAdquirente" type="tns:DatosAdquirentePC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DatosVehiculoPC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="patenteVeh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dvPatenteVeh" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoMarca" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripMarca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codigoTipoVeh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripTipoVeh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="modeloVeh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="colorVeh" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="anioVeh" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="chasisVeh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="motorVeh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vinVeh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="serieVeh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="combustibleVeh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cilindrajeVeh" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pesoBrutoVeh" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="pesoCargaVeh" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="numPuertaVeh" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="numAsientoVeh" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DatosFacturaPC">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="numFactura" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="fecFactura" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="netoFactura" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DatosAdquirentePC">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="rutAdquirente" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="dvAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nombreAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="paternoAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maternoAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sexoAdquierente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tipoPersonaAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nacionalidadAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="profesionAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="estadoCivilAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="direccionAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numeroAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="deptoAdquirente" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoComuna" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripComuna" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoCiudad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripCiudad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoRegion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="descripRegion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="telefonoAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="celularAdquirente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="emailAdquirente" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getInformacionPermiso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="patente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionPermisoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInformacionPermisoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionMotorPermisoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionMotorPermisoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInformacionMotorPermisoXMLResult" type="tns:PermisoCirculacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionMotorPermiso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionMotorPermisoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInformacionMotorPermisoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionNumeroOperacionXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numero_operacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionNumeroOperacionXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInformacionNumeroOperacionXMLResult" type="tns:PermisoCirculacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionNumeroOperacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numero_operacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInformacionNumeroOperacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInformacionNumeroOperacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CifrarTDES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CifrarTDESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CifrarTDESResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoGastos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pswd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="chasis" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoGastosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfoGastosResult" type="tns:InfoGastos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InfoGastos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Patente" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorRegistroCivil" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSOAP" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorPermisoCirculacion" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTramite" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorOtros" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddOrdenPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrdenPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddOrdenPedidoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getMatrizEscrituraSoapIn">
+    <wsdl:part name="parameters" element="tns:getMatrizEscritura" />
+  </wsdl:message>
+  <wsdl:message name="getMatrizEscrituraSoapOut">
+    <wsdl:part name="parameters" element="tns:getMatrizEscrituraResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListaModelosVehiculosSoapIn">
+    <wsdl:part name="parameters" element="tns:getListaModelosVehiculos" />
+  </wsdl:message>
+  <wsdl:message name="getListaModelosVehiculosSoapOut">
+    <wsdl:part name="parameters" element="tns:getListaModelosVehiculosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListaColoresVehiculosSoapIn">
+    <wsdl:part name="parameters" element="tns:getListaColoresVehiculos" />
+  </wsdl:message>
+  <wsdl:message name="getListaColoresVehiculosSoapOut">
+    <wsdl:part name="parameters" element="tns:getListaColoresVehiculosResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListaSolicitantesSoapIn">
+    <wsdl:part name="parameters" element="tns:getListaSolicitantes" />
+  </wsdl:message>
+  <wsdl:message name="getListaSolicitantesSoapOut">
+    <wsdl:part name="parameters" element="tns:getListaSolicitantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListadoRegionesSoapIn">
+    <wsdl:part name="parameters" element="tns:getListadoRegiones" />
+  </wsdl:message>
+  <wsdl:message name="getListadoRegionesSoapOut">
+    <wsdl:part name="parameters" element="tns:getListadoRegionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListadoCiudadesSoapIn">
+    <wsdl:part name="parameters" element="tns:getListadoCiudades" />
+  </wsdl:message>
+  <wsdl:message name="getListadoCiudadesSoapOut">
+    <wsdl:part name="parameters" element="tns:getListadoCiudadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListadoComunasSoapIn">
+    <wsdl:part name="parameters" element="tns:getListadoComunas" />
+  </wsdl:message>
+  <wsdl:message name="getListadoComunasSoapOut">
+    <wsdl:part name="parameters" element="tns:getListadoComunasResponse" />
+  </wsdl:message>
+  <wsdl:message name="EncriptarSoapIn">
+    <wsdl:part name="parameters" element="tns:Encriptar" />
+  </wsdl:message>
+  <wsdl:message name="EncriptarSoapOut">
+    <wsdl:part name="parameters" element="tns:EncriptarResponse" />
+  </wsdl:message>
+  <wsdl:message name="DesencriptarSoapIn">
+    <wsdl:part name="parameters" element="tns:Desencriptar" />
+  </wsdl:message>
+  <wsdl:message name="DesencriptarSoapOut">
+    <wsdl:part name="parameters" element="tns:DesencriptarResponse" />
+  </wsdl:message>
+  <wsdl:message name="act_valor_patenteSoapIn">
+    <wsdl:part name="parameters" element="tns:act_valor_patente" />
+  </wsdl:message>
+  <wsdl:message name="act_valor_patenteSoapOut">
+    <wsdl:part name="parameters" element="tns:act_valor_patenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="act_valor_patente_por_motorSoapIn">
+    <wsdl:part name="parameters" element="tns:act_valor_patente_por_motor" />
+  </wsdl:message>
+  <wsdl:message name="act_valor_patente_por_motorSoapOut">
+    <wsdl:part name="parameters" element="tns:act_valor_patente_por_motorResponse" />
+  </wsdl:message>
+  <wsdl:message name="act_valor_patente_por_numero_operacionSoapIn">
+    <wsdl:part name="parameters" element="tns:act_valor_patente_por_numero_operacion" />
+  </wsdl:message>
+  <wsdl:message name="act_valor_patente_por_numero_operacionSoapOut">
+    <wsdl:part name="parameters" element="tns:act_valor_patente_por_numero_operacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="act_valor_motorSoapIn">
+    <wsdl:part name="parameters" element="tns:act_valor_motor" />
+  </wsdl:message>
+  <wsdl:message name="act_valor_motorSoapOut">
+    <wsdl:part name="parameters" element="tns:act_valor_motorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionPermisoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:getInformacionPermisoXML" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionPermisoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:getInformacionPermisoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionPermisoSoapIn">
+    <wsdl:part name="parameters" element="tns:getInformacionPermiso" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionPermisoSoapOut">
+    <wsdl:part name="parameters" element="tns:getInformacionPermisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionMotorPermisoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:getInformacionMotorPermisoXML" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionMotorPermisoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:getInformacionMotorPermisoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionMotorPermisoSoapIn">
+    <wsdl:part name="parameters" element="tns:getInformacionMotorPermiso" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionMotorPermisoSoapOut">
+    <wsdl:part name="parameters" element="tns:getInformacionMotorPermisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionNumeroOperacionXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:getInformacionNumeroOperacionXML" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionNumeroOperacionXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:getInformacionNumeroOperacionXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionNumeroOperacionSoapIn">
+    <wsdl:part name="parameters" element="tns:getInformacionNumeroOperacion" />
+  </wsdl:message>
+  <wsdl:message name="getInformacionNumeroOperacionSoapOut">
+    <wsdl:part name="parameters" element="tns:getInformacionNumeroOperacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CifrarTDESSoapIn">
+    <wsdl:part name="parameters" element="tns:CifrarTDES" />
+  </wsdl:message>
+  <wsdl:message name="CifrarTDESSoapOut">
+    <wsdl:part name="parameters" element="tns:CifrarTDESResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoGastosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfoGastos" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoGastosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfoGastosResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrdenPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrdenPedido" />
+  </wsdl:message>
+  <wsdl:message name="AddOrdenPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrdenPedidoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="getMatrizEscritura">
+      <wsdl:input message="tns:getMatrizEscrituraSoapIn" />
+      <wsdl:output message="tns:getMatrizEscrituraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaModelosVehiculos">
+      <wsdl:input message="tns:getListaModelosVehiculosSoapIn" />
+      <wsdl:output message="tns:getListaModelosVehiculosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaColoresVehiculos">
+      <wsdl:input message="tns:getListaColoresVehiculosSoapIn" />
+      <wsdl:output message="tns:getListaColoresVehiculosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaSolicitantes">
+      <wsdl:input message="tns:getListaSolicitantesSoapIn" />
+      <wsdl:output message="tns:getListaSolicitantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListadoRegiones">
+      <wsdl:input message="tns:getListadoRegionesSoapIn" />
+      <wsdl:output message="tns:getListadoRegionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListadoCiudades">
+      <wsdl:input message="tns:getListadoCiudadesSoapIn" />
+      <wsdl:output message="tns:getListadoCiudadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListadoComunas">
+      <wsdl:input message="tns:getListadoComunasSoapIn" />
+      <wsdl:output message="tns:getListadoComunasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Encriptar">
+      <wsdl:input message="tns:EncriptarSoapIn" />
+      <wsdl:output message="tns:EncriptarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Desencriptar">
+      <wsdl:input message="tns:DesencriptarSoapIn" />
+      <wsdl:output message="tns:DesencriptarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_patente">
+      <wsdl:input message="tns:act_valor_patenteSoapIn" />
+      <wsdl:output message="tns:act_valor_patenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_patente_por_motor">
+      <wsdl:input message="tns:act_valor_patente_por_motorSoapIn" />
+      <wsdl:output message="tns:act_valor_patente_por_motorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_patente_por_numero_operacion">
+      <wsdl:input message="tns:act_valor_patente_por_numero_operacionSoapIn" />
+      <wsdl:output message="tns:act_valor_patente_por_numero_operacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_motor">
+      <wsdl:input message="tns:act_valor_motorSoapIn" />
+      <wsdl:output message="tns:act_valor_motorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionPermisoXML">
+      <wsdl:input message="tns:getInformacionPermisoXMLSoapIn" />
+      <wsdl:output message="tns:getInformacionPermisoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionPermiso">
+      <wsdl:input message="tns:getInformacionPermisoSoapIn" />
+      <wsdl:output message="tns:getInformacionPermisoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionMotorPermisoXML">
+      <wsdl:input message="tns:getInformacionMotorPermisoXMLSoapIn" />
+      <wsdl:output message="tns:getInformacionMotorPermisoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionMotorPermiso">
+      <wsdl:input message="tns:getInformacionMotorPermisoSoapIn" />
+      <wsdl:output message="tns:getInformacionMotorPermisoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionNumeroOperacionXML">
+      <wsdl:input message="tns:getInformacionNumeroOperacionXMLSoapIn" />
+      <wsdl:output message="tns:getInformacionNumeroOperacionXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionNumeroOperacion">
+      <wsdl:input message="tns:getInformacionNumeroOperacionSoapIn" />
+      <wsdl:output message="tns:getInformacionNumeroOperacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CifrarTDES">
+      <wsdl:input message="tns:CifrarTDESSoapIn" />
+      <wsdl:output message="tns:CifrarTDESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoGastos">
+      <wsdl:input message="tns:GetInfoGastosSoapIn" />
+      <wsdl:output message="tns:GetInfoGastosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrdenPedido">
+      <wsdl:input message="tns:AddOrdenPedidoSoapIn" />
+      <wsdl:output message="tns:AddOrdenPedidoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getMatrizEscritura">
+      <soap:operation soapAction="http://tempuri.org/getMatrizEscritura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaModelosVehiculos">
+      <soap:operation soapAction="http://tempuri.org/getListaModelosVehiculos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaColoresVehiculos">
+      <soap:operation soapAction="http://tempuri.org/getListaColoresVehiculos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaSolicitantes">
+      <soap:operation soapAction="http://tempuri.org/getListaSolicitantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListadoRegiones">
+      <soap:operation soapAction="http://tempuri.org/getListadoRegiones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListadoCiudades">
+      <soap:operation soapAction="http://tempuri.org/getListadoCiudades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListadoComunas">
+      <soap:operation soapAction="http://tempuri.org/getListadoComunas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encriptar">
+      <soap:operation soapAction="http://tempuri.org/Encriptar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Desencriptar">
+      <soap:operation soapAction="http://tempuri.org/Desencriptar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_patente">
+      <soap:operation soapAction="http://tempuri.org/act_valor_patente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_patente_por_motor">
+      <soap:operation soapAction="http://tempuri.org/act_valor_patente_por_motor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_patente_por_numero_operacion">
+      <soap:operation soapAction="http://tempuri.org/act_valor_patente_por_numero_operacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_motor">
+      <soap:operation soapAction="http://tempuri.org/act_valor_motor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionPermisoXML">
+      <soap:operation soapAction="http://tempuri.org/getInformacionPermisoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionPermiso">
+      <soap:operation soapAction="http://tempuri.org/getInformacionPermiso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionMotorPermisoXML">
+      <soap:operation soapAction="http://tempuri.org/getInformacionMotorPermisoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionMotorPermiso">
+      <soap:operation soapAction="http://tempuri.org/getInformacionMotorPermiso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionNumeroOperacionXML">
+      <soap:operation soapAction="http://tempuri.org/getInformacionNumeroOperacionXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionNumeroOperacion">
+      <soap:operation soapAction="http://tempuri.org/getInformacionNumeroOperacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CifrarTDES">
+      <soap:operation soapAction="http://tempuri.org/CifrarTDES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoGastos">
+      <soap:operation soapAction="http://tempuri.org/GetInfoGastos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrdenPedido">
+      <soap:operation soapAction="http://tempuri.org/AddOrdenPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getMatrizEscritura">
+      <soap12:operation soapAction="http://tempuri.org/getMatrizEscritura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaModelosVehiculos">
+      <soap12:operation soapAction="http://tempuri.org/getListaModelosVehiculos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaColoresVehiculos">
+      <soap12:operation soapAction="http://tempuri.org/getListaColoresVehiculos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaSolicitantes">
+      <soap12:operation soapAction="http://tempuri.org/getListaSolicitantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListadoRegiones">
+      <soap12:operation soapAction="http://tempuri.org/getListadoRegiones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListadoCiudades">
+      <soap12:operation soapAction="http://tempuri.org/getListadoCiudades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListadoComunas">
+      <soap12:operation soapAction="http://tempuri.org/getListadoComunas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encriptar">
+      <soap12:operation soapAction="http://tempuri.org/Encriptar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Desencriptar">
+      <soap12:operation soapAction="http://tempuri.org/Desencriptar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_patente">
+      <soap12:operation soapAction="http://tempuri.org/act_valor_patente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_patente_por_motor">
+      <soap12:operation soapAction="http://tempuri.org/act_valor_patente_por_motor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_patente_por_numero_operacion">
+      <soap12:operation soapAction="http://tempuri.org/act_valor_patente_por_numero_operacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="act_valor_motor">
+      <soap12:operation soapAction="http://tempuri.org/act_valor_motor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionPermisoXML">
+      <soap12:operation soapAction="http://tempuri.org/getInformacionPermisoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionPermiso">
+      <soap12:operation soapAction="http://tempuri.org/getInformacionPermiso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionMotorPermisoXML">
+      <soap12:operation soapAction="http://tempuri.org/getInformacionMotorPermisoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionMotorPermiso">
+      <soap12:operation soapAction="http://tempuri.org/getInformacionMotorPermiso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionNumeroOperacionXML">
+      <soap12:operation soapAction="http://tempuri.org/getInformacionNumeroOperacionXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInformacionNumeroOperacion">
+      <soap12:operation soapAction="http://tempuri.org/getInformacionNumeroOperacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CifrarTDES">
+      <soap12:operation soapAction="http://tempuri.org/CifrarTDES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoGastos">
+      <soap12:operation soapAction="http://tempuri.org/GetInfoGastos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrdenPedido">
+      <soap12:operation soapAction="http://tempuri.org/AddOrdenPedido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://sistema.agpsa.cl:8083/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://sistema.agpsa.cl:8083/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
