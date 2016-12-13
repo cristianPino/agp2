@@ -1,5 +1,6 @@
 ﻿using System;      
 using System.Web.UI.WebControls; 
+using CENTIDAD;
 using CNEGOCIO;
 using System.Collections.Generic;
 
@@ -15,19 +16,17 @@ namespace sistemaAGP
 				FuncionGlobal.alerta("Necesitamos que inicie sesion", Page);
 				Response.Redirect("~/login.aspx");
 			}
-			{
-                try
-			    {   
-                    menu_usuario();
-                    Perfilusuario();
-			    }
-			    catch (Exception)
-			    {
-                    FuncionGlobal.alerta("Necesitamos que inicie sesión", Page);
-                    Response.Redirect("~/login.aspx");
-			    }
-				
-			}
+		    if (IsPostBack) return;
+		    try
+		    {   
+		        menu_usuario();
+		        Perfilusuario();
+		    }
+		    catch (Exception)
+		    {
+		        FuncionGlobal.alerta("Necesitamos que inicie sesión", Page);
+		        Response.Redirect("~/login.aspx");
+		    }
 		}
 
 		private void Perfilusuario()
