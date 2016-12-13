@@ -13,7 +13,7 @@ namespace sistemaAGP
 			Response.AddHeader("Refresh", Convert.ToString((Session.Timeout * 60) + 5));
             if (Session["usrname"] == null || Session["usrname"].ToString().Trim() == "")
 			{
-				FuncionGlobal.alerta("Necesitamos que inicie sesion", Page);
+				FuncionGlobal.alerta("Necesitamos que inicie Session, por favor", Page);
 				Response.Redirect("~/login.aspx");
 			}
 		    if (IsPostBack) return;
